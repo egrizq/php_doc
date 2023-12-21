@@ -21,7 +21,7 @@
         if ($result && mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
 
-            ?>
+    ?>
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -31,7 +31,7 @@
                         <a class="nav-link" style="color:blue;" href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color:blue;" href="manage.php">Lihat Data</a>
+                        <a class="nav-link" style="color:blue;" href="manage_exp.php">Lihat Data</a>
                     </li>
                 </ul>
 
@@ -47,21 +47,17 @@
     </nav>
 
     <div class="container-fluid">
-        <!-- <?php
-        echo "<div class=text-center>" . "<h3> Selamat Datang, ". $user["nama_depan"] . "</h3>" . "</div";
-
-        ?> -->
 
         <div class="row">
-            <div class="col-1"></div>
-
-            <div class="col-2"></div>
+            <div class="col-3 text-center pt-5">
+                <img src='<?php echo "file/" . $user["foto"]; ?>' width='270px' height="350px">
+            </div>
 
             <div class="col-6">
                 <?php
-            echo "<h3 class='pb-4'> Selamat Datang, ". $user["nama_depan"] . "</h3>";
+                    echo "<h3 class='pb-2'> Selamat Datang, ". $user["nama_depan"] . "</h3>";
+                ?>
 
-            ?>
                 <div class="row p-4 border">
                     <div class="col-5">
                         <?php
@@ -78,36 +74,38 @@
 
                     <div class="col-1">
                         <?php
-                    echo "<p>" . ":". "</p>";
-                    echo "<p>" . ":". "</p>";
-                    echo "<p>" . ":". "</p>";
-                    echo "<p>" . ":". "</p>";
-                    echo "<p>" . ":". "</p>";
-                    echo "<p>" . ":". "</p>";
-                    echo "<p>" . ":". "</p>";
-                    echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
+                            echo "<p>" . ":". "</p>";
 
-                ?>
+                        ?>
                     </div>
 
                     <div class="col-6">
                         <?php
-                    echo "<p>". ' ' . $user["nama_depan"] . ' ' . $user["nama_belakang"]. "</p>";
-                    echo "<p>". ' ' . $user["negara"];
-                    echo "<p>". ' ' . $user["kota"];
-                    echo "<p>". ' ' . $user["kode_pos"];
-                    echo "<p>". ' ' . $user["jenis_kelamin"];
-                    echo "<p>". ' ' . $user["nomor_handphone"];
-                    echo "<p>". ' ' . $user["tanggal_lahir"];
-                    echo "<p>". ' ' . $user["email"];
-        }
-                mysqli_close($connect);
-                ?>
-
+                            echo "<p>". ' ' . $user["nama_depan"] . ' ' . $user["nama_belakang"]. "</p>";
+                            echo "<p>". ' ' . $user["negara"];
+                            echo "<p>". ' ' . $user["kota"];
+                            echo "<p>". ' ' . $user["kode_pos"];
+                            echo "<p>". ' ' . $user["jenis_kelamin"];
+                            echo "<p>". ' ' . $user["nomor_handphone"];
+                            echo "<p>". ' ' . $user["tanggal_lahir"];
+                            echo "<p>". ' ' . $user["email"];
+                        ?>
                     </div>
-
                 </div>
+            </div>
 
+            <div class='col-1'>
+                <div>
+                    <a class='btn btn-warning'
+                        href='edit_data.php?id_register=<?php echo $user["id_register"]; } ?>'>Edit</a>
+                </div>
             </div>
 
         </div>

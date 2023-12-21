@@ -30,7 +30,7 @@
                         <a class="nav-link" style="color:blue;" href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color:blue;" href="manage.php">Lihat Data</a>
+                        <a class="nav-link" style="color:blue;" href="manage_exp.php">Lihat Data</a>
                     </li>
                 </ul>
 
@@ -47,15 +47,26 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
 
-            <div class="col-md-8">
-                <table class="table text-center">
+            <div class="col-md-10">
+                <div class="text-end pt-3 pb-5">
+
+                    <button class="btn btn-success" href="excel.php" target="_blank">Download
+                        Excel</button>
+                </div>
+
+                <table class="table">
                     <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">Option</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Negara</th>
+                        <th scope="col">Kota</th>
+                        <th scope="col">Kode Post</th>
+                        <th scope="col">Jenis Kelamin</th>
+                        <th scope="col">Nomor HP</th>
+                        <th scope="col">Tanggal Lahir</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Opsi</th>
                     </tr>
 
                     <?php
@@ -69,31 +80,28 @@
                 while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $row['username']; ?></td>
-                        <td><?php echo $row['password']; ?></td>
-                        <!-- <td>
-                            <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-success"> Update </a>
-                            <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"> Delete </a>
-                        </td> -->
+                        <td><?php echo $row['nama_depan']. ' ' . $row['nama_belakang']; ?></td>
+                        <td><?php echo $row['negara']; ?></td>
+                        <td><?php echo $row['kota']; ?></td>
+                        <td><?php echo $row['kode_pos']; ?></td>
+                        <td><?php echo $row['jenis_kelamin']; ?></td>
+                        <td><?php echo $row['nomor_handphone']; ?></td>
+                        <td><?php echo $row['tanggal_lahir']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                        <td>
+                            <a href="delete.php?id_register=<?php echo $row['id_register']; ?>" class="btn btn-danger">
+                                Delete
+                            </a>
+                        </td>
                     </tr>
                     <?php
                 };
                 ?>
                 </table>
 
-                <div style="padding-top: 10px;" class="text-center">
-                    <button onclick="register()" name="register" class="btn btn-warning"> Register </button>
-                </div>
             </div>
         </div>
     </div>
-
-    <script>
-    function register() {
-        window.location.href = 'register.html'
-    }
-    </script>
 
     <script src="boostrap/js/jquery.js"></script>
     <script src="boostrap/js/popper.js"></script>

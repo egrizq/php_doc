@@ -21,7 +21,7 @@
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="login.html">Login</a></li>
-                            <li><a class="dropdown-item" href="register.html">Register</a></li>
+                            <li><a class="dropdown-item" href="register_form.php">Register</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -101,7 +101,7 @@
 
                             <div class="py-4">
                                 <small>Negara</small>
-                                <select class="form-select" name="jenis_identitas">
+                                <select class="form-select" name="negara">
                                     <?php
                                         include 'connect.php';
 
@@ -117,7 +117,7 @@
 
                             <div>
                                 <small>Tanggal Lahir</small><br>
-                                <input class="form-control" type="date" name="date">
+                                <input class="form-control" type="date" name="date" required>
                             </div>
 
                             <div class="row pt-4">
