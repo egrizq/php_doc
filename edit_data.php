@@ -27,7 +27,7 @@
                         <a class="nav-link" style="color:blue;" href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color:blue;" href="manage.php">Lihat Data</a>
+                        <a class="nav-link" style="color:blue;" href="manage_exp.php">Lihat Data</a>
                     </li>
                 </ul>
 

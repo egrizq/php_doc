@@ -27,6 +27,9 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class='nav-item pt-1'>
+                        <img src='image/logo_undira.jpg' width='120'>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color:blue;" href="dashboard.php">Dashboard</a>
                     </li>
@@ -55,7 +58,10 @@
 
             <div class="col-6">
                 <?php
-                    echo "<h3 class='pb-2'> Selamat Datang, ". $user["nama_depan"] . "</h3>";
+                    echo 
+                    "<h3 class='pb-2 text-start'> 
+                            Selamat Datang, ". $user["nama_depan"] . 
+                    "</h3>";
                 ?>
 
                 <div class="row p-4 border">

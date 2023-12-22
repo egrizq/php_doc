@@ -34,7 +34,10 @@
         <div class="row">
             <div class="col-md-2"></div>
 
-            <div class="col-8">
+            <div class="col-8 border p-3">
+                <div class='text-center p-3'>
+                    <img src='image/logo_undira.jpg' width='200'>
+                </div>
                 <form method="post" action="register.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-6">
@@ -136,7 +139,7 @@
 
                             <div>
                                 <small>Foto</small>
-                                <input type="file" class="form-control" name="foto" accept=".png, .jpeg, .jpg" />
+                                <input type="file" class="form-control" name="foto" accept=".png, .jpeg, .jpg" required>
                             </div>
 
                             <div class="pt-4">

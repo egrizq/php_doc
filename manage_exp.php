@@ -26,6 +26,9 @@
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class='nav-item pt-1'>
+                        <img src='image/logo_undira.jpg' width='120'>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color:blue;" href="dashboard.php">Dashboard</a>
                     </li>
@@ -52,8 +55,8 @@
             <div class="col-md-10">
                 <div class="text-end pt-3 pb-5">
 
-                    <button class="btn btn-success" href="excel.php" target="_blank">Download
-                        Excel</button>
+                    <a class="btn btn-success" href="excel.php" target="_blank">Download
+                        Excel</a>
                 </div>
 
                 <table class="table">

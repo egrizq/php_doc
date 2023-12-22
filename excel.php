@@ -1,40 +1,59 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-include "connect.php";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+</head>
 
-require 'vendor/autoload.php';
- 
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+<body>
+    <center>
+        <h3>Export Data Ke Excel</h3>
+    </center>
 
-$spreadsheet = new Spreadsheet();
-$sheet = $spreadsheet->getActiveSheet();
+    <table border='1'>
+        <tr>
+            <th scope="col">Nama</th>
+            <th scope="col">Negara</th>
+            <th scope="col">Kota</th>
+            <th scope="col">Kode Post</th>
+            <th scope="col">Jenis Kelamin</th>
+            <th scope="col">Nomor HP</th>
+            <th scope="col">Tanggal Lahir</th>
+            <th scope="col">Email</th>
+        </tr>
 
-$sheet->setCellValue('A1','Nama');
-$sheet->setCellValue('B1','Negara');
-$sheet->setCellValue('C1','Kota');
-$sheet->setCellValue('D1','Kode Pos');
-$sheet->setCellValue('E1','Jenis Kelamin');
-$sheet->setCellValue('F1','Nomor HP');
-$sheet->setCellValue('G1','Tanggal Lahir');
-$sheet->setCellValue('H1','Email');
+        <?php
+            header("Content-type: application/vnd-ms-excel");
+            header("Content-Disposition: attachment; filename=Data.xls");
+                        
+            include 'connect.php';
+                
+            $no = 1;
+            $query = "SELECT * FROM tbl_register";
+            $result = mysqli_query($connect, $query);
+            
+            while ($row = mysqli_fetch_array($result)) {
+        ?>
 
-$query = "SELECT * FROM tbl_register";
-$result = mysqli_query($connect, $query);
+        <tr>
+            <td><?php echo $row['nama_depan']. ' ' . $row['nama_belakang']; ?></td>
+            <td><?php echo $row['negara']; ?></td>
+            <td><?php echo $row['kota']; ?></td>
+            <td><?php echo $row['kode_pos']; ?></td>
+            <td><?php echo $row['jenis_kelamin']; ?></td>
+            <td><?php echo $row['nomor_handphone']; ?></td>
+            <td><?php echo $row['tanggal_lahir']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+        </tr>
+        <?php
+            };
+        ?>
+    </table>
 
-$no = 1;
-while ($row = mysqli_fetch_array($result)) {
-    $sheet->setCellValue("A".$no, $row["nama"]);
-    $sheet->setCellValue("B".$no, $row["negara"]);
-    $sheet->setCellValue("C".$no, $row["kota"]);
-    $sheet->setCellValue("D".$no, $row["kode_pos"]);
-    $sheet->setCellValue("E".$no, $row["jenis_kelamin"]);
-    $sheet->setCellValue("F".$no, $row["nomor_handphone"]);
-    $sheet->setCellValue("G".$no, $row["tanggal_lahir"]);
-    $sheet->setCellValue("H".$no, $row["email"]);
-}   
+    </div>
+    </div>
+    </div>
+</body>
 
-$writer = new Xlsx($spreadsheet);
-$writer->save("excel.xlsx");
-
-?>
+</html>
