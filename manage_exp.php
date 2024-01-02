@@ -93,7 +93,7 @@
                         <td><?php echo $row['email']; ?></td>
                         <td>
                             <a href="delete.php?id_register=<?php echo $row['id_register']; ?>" class="btn btn-danger">
-                                Delete
+                                <img src="image/trash.png" width="35" height="30">
                             </a>
                         </td>
                     </tr>
