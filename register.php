@@ -51,7 +51,7 @@ if (isset($_POST['register'])) {
                 die(
                     "<script LANGUAGE='JavaScript'>
                     window.alert('login failed')
-                    window.location.href='register.html';
+                    window.location.href='register.php';
                     </script>"
                 );
             }
@@ -60,7 +60,7 @@ if (isset($_POST['register'])) {
         echo 
             '<script LANGUAGE="JavaScript">
             window.alert("Username Sudah Terdaftar")
-            window.location.href="register.html";
+            window.location.href="register.php";
             </script>';
     }
 }
